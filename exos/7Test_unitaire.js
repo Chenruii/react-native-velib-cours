@@ -1,0 +1,1 @@
+// Inclure la librairie Jest et réaliser un test de type "Snapshot" sur un composant visuel.
