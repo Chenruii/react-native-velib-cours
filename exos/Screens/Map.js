@@ -19,9 +19,16 @@ const styles = StyleSheet.create({
   class Map extends Component {
     render() {
       return (
-        <View style={styles.container}>
-          <MapView style={styles.mapStyle} />
-        </View>
+        <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+        <Text>detail Velib</Text>
+        <MapView style={styles.mapStyle} />
+        <Button title="retour home" onPress={() => this.props.navigation.navigate('Home')}
+        />
+        <Button title="actualise" onPress={() => this.props.navigation.push('Details')}
+        />
+        <Button title="page precedente" onPress={() => this.props.navigation.goBack()}
+        />
+    </View>
       );
     }
   }

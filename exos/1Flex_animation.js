@@ -89,7 +89,7 @@ export default class FlexAnimationApp extends Component {
 
           <Button  onPress={() => { Alert.alert("clique！"); }}
           title="Clique Me"/>
-           <FlatListBase />
+           <FlatBase />
           </View>
         </View>
       //</ScrollView>

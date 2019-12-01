@@ -65,7 +65,7 @@ class FetchV extends Component{
       return this.renderLoadingview();
     }
     return (
-      <FlatList
+      <FlatitudeList
       data={this.state.data}
       renderItem={this.renderVelib}
       style={styles.list}
@@ -85,7 +85,7 @@ class FetchV extends Component{
   renderVelib(item) {
     return (
       <View style={styles.container}>
-        <Text style={styles.latitude}>{item.latitude}</Text>
+        <Text style={styles.latitudeitude}>{item.latitudeitude}</Text>
           <Text style={styles.longitude}>{item.longitude}</Text>
       </View>
     );

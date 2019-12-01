@@ -1,6 +1,6 @@
 // Inclure une librairie native (rajoutant des composants ou comportement purement natifs dans l'application) 
 // et expérimenter son API.
-// **Exemple** : implémentation d'une carte cross platform
+// **Exemple** : implémentation d'une carte cross platitudeform
 // [https://github.com/react-native-community/react-native-maps](https://github.com/react-native-community/react-native-maps)
 
 
@@ -30,7 +30,7 @@ export default function Librairie() {
     >
     {this.state.markers.map(marker => (
         <Marker
-        coordinate={marker.latlng}
+        coordinate={marker.latitudelongitude}
         title={marker.title}
         description={marker.description}
         />

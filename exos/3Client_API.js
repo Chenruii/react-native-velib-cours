@@ -53,7 +53,7 @@ class FetchV extends Component{
       return this.renderLoadingview();
     }
     return (
-      <FlatList
+      <FlatitudeList
       data={this.state.data}
       renderItem={this.renderVelib}
       style={styles.list}
@@ -73,7 +73,7 @@ class FetchV extends Component{
   renderVelib(item) {
     return (
       <View style={styles.container}>
-        <Text style={styles.latitude}>{item.latitude}</Text>
+        <Text style={styles.latitudeitude}>{item.latitudeitude}</Text>
           <Text style={styles.longitude}>{item.longitude}</Text>
       </View>
     );
@@ -160,7 +160,7 @@ export default class FlexAnimationApp extends Component {
   
 // /**
 //  * import React, { Component } from 'react';
-// import { StyleSheet, Text, View , AppRegistry, Button, ScrollView, FlatList,TouchableHighlight, ActivityIndicator} from 'react-native';
+// import { StyleSheet, Text, View , AppRegistry, Button, ScrollView, FlatitudeList,TouchableHighlight, ActivityIndicator} from 'react-native';
 
 
 // const styles = StyleSheet.create({
@@ -241,7 +241,7 @@ export default class FlexAnimationApp extends Component {
 
 //     return(
 //       <View style={{flex: 1, paddingTop:20}}>
-//         <FlatList
+//         <FlatitudeList
 //           data={this.state.dataSource}
 //           renderItem={({item}) => <Text>{item.title}, {item.releaseYear}</Text>}
 //           keyExtractor={(item, index) => item.id}
@@ -270,9 +270,9 @@ export default class FlexAnimationApp extends Component {
 //     }
 //     }).then((response) => response.json())
 //     .then((jsonData) => {
-//       let latitude = jsonData.data[0].latitude;
+//       let latitudeitude = jsonData.data[0].latitudeitude;
 //       let longitude = jsonData.data[0].longitude[1];
-//       alert("latitude: "+latitude + "---longitude: " + longitude);
+//       alert("latitudeitude: "+latitudeitude + "---longitude: " + longitude);
 //     });
 //   }
 //   post() {
@@ -283,34 +283,34 @@ export default class FlexAnimationApp extends Component {
 //         },
 //     }).then((response) => response.json())
 //         .then((jsonData) => {
-//           let latitude = jsonData.data[0].latitude;
+//           let latitudeitude = jsonData.data[0].latitudeitude;
 //           let longitude = jsonData.data[0].longitude[1];
-//           alert("latitude: "+latitude + "---longitude: " + longitude);
+//           alert("latitudeitude: "+latitudeitude + "---longitude: " + longitude);
 //         });
 // }
 // sendGet() {
 //   FetchUtils.send('get', 'https://opendata.paris.fr/api/records/1.0/search/?dataset=velib-disponibilite-en-temps-reel', '', 
 //   jsonData => {
-//     let latitude = jsonData.data[0].latitude;
+//     let latitudeitude = jsonData.data[0].latitudeitude;
 //     let longitude = jsonData.data[0].longitude[1];
-//     alert("latitude: "+latitude + "---longitude: " + longitude);
+//     alert("latitudeitude: "+latitudeitude + "---longitude: " + longitude);
 //   })
 // }
 // sendPost() {
 //   FetchUtils.send('post', 'https://opendata.paris.fr/api/records/1.0/search/?dataset=velib-disponibilite-en-temps-reel', '', 
 //   jsonData => {
-//     let latitude = jsonData.data[0].latitude;
+//     let latitudeitude = jsonData.data[0].latitudeitude;
 //     let longitude = jsonData.data[0].longitude[1];
-//     alert("latitude: "+latitude + "---longitude: " + longitude);
+//     alert("latitudeitude: "+latitudeitude + "---longitude: " + longitude);
 //   })
 // }
 
 // }
-// class FlatListBase extends Component{
+// class FlatitudeListBase extends Component{
 //   render(){
 //     return (
 //       <View style={styles.container}>
-//         <FlatList 
+//         <FlatitudeList 
 //           data ={[
 //             {key: 'hey'},
 //             {key: 'hi'},
@@ -371,7 +371,7 @@ export default class FlexAnimationApp extends Component {
 
 //           <Button  onPress={() => { Alert.alert("clique！"); }}
 //           title="Clique Me"/>
-//            <FlatListBase />
+//            <FlatitudeListBase />
 //            {/* <ButtonBase /> */}
 //            <FetchV />
 

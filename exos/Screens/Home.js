@@ -4,6 +4,8 @@ import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 
+import MapView from 'react-native-maps';
+
 class HomeScreen extends Component {
     static navigationOptions = {
         title: "Home",
@@ -11,14 +13,10 @@ class HomeScreen extends Component {
     render() {
         return (
             <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-                <Text>Home</Text>
                 <Text>Velib</Text>
-                <Text>Map</Text>
+                <Button title="Map" onPress={() => this.props.navigation.navigate('Map')}/>
                 <Text>Geolocalisation</Text>
-                <Button
-                    title="lire plus"
-                    onPress={() => this.props.navigation.navigate('Details')}
-                />
+                <Button title="lire plus"onPress={() => this.props.navigation.navigate('Details')}/>
             </View>
         );
     }
@@ -68,6 +66,42 @@ class DetailsScreen extends Component {
         );
     }
 }
+
+class MapScreen extends Component {
+    componentDidMount(){
+        this.componentDidUpdate();
+    }
+
+    componentDidUpdate(){
+        if(this.lastlatitudeitude == this.props.latitudeitude && this.lastlongitude == this.props.longitude){
+            return;
+        }
+
+        this.lastlatitudeitude = this.props.latitudeitude;
+        this.lastLongitude = this.props.longitude
+
+        const map = new GMaps({
+            el: '#map',
+            latitude: this.props.latitude,
+            longitude: this.props.longitude
+        });
+        map.addMarker({
+            lat: this.props.lat,
+            lng: this.props.lng
+        });
+    }
+    render(){
+        return (
+            <View className="map-holder">
+                <Text>Loading...</Text>
+                <View id="map">
+                    <MapView style={styles.mapStyle} />
+                </View>
+            </View>
+        );
+    }
+}
+
 const bottomTabNavigator = createBottomTabNavigator({
         Home: HomeScreen,
         User: UsersScreen,
@@ -82,7 +116,8 @@ const AppNavigator = createStackNavigator({
     bottomTabNavigator: {
         screen: bottomTabNavigator
     },
-    Details: DetailsScreen
+    Details: DetailsScreen,
+    Map : MapScreen
 }, {
         initialRouteName: "bottomTabNavigator",
         defaultNavigationOptions: {
@@ -91,6 +126,19 @@ const AppNavigator = createStackNavigator({
             }
         },
 });
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    mapStyle: {
+      width: Dimensions.get('window').width,
+      height: Dimensions.get('window').height,
+    },
+  });
 const AppContainer = createAppContainer(AppNavigator);
 
 export default class App extends Component {
